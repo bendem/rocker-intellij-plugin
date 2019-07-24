@@ -5,7 +5,7 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.4.2"
+    id "org.jetbrains.intellij" version "0.4.9"
 }
 
 wrapper {
@@ -27,9 +27,10 @@ compileJava {
 intellij {
     version = ideaVersion
 
-    pluginName 'antlr4-intellij-plugin-sample'
+    pluginName 'antlr4-intellij-plugin-Rocker'
     downloadSources true
     updateSinceUntilBuild false
+    plugins 'PsiViewer:191.4212'
 }
 
 repositories {
@@ -45,5 +46,8 @@ dependencies {
 }
 
 generateGrammarSource {
-    arguments += ["-package", "org.antlr.jetbrains.sample.parser", "-Xexact-output-dir"]
+    exclude('**/WithBlock*.g4')
+
+    arguments += ["-package", "com.fizzed.rocker.antlr4", "-Xexact-output-dir", "-visitor"]
+    outputDirectory = new File(buildDir.toString() + "/generated-src/antlr/main/com/fizzed/rocker/antlr4")
 }

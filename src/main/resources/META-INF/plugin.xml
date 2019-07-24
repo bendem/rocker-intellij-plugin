@@ -1,14 +1,14 @@
 <idea-plugin version="2">
-	<id>org.antlr.jetbrains.sample</id>
-	<name>Sample Jetbrains Plugin</name>
+	<id>be.bendem.rockerintellij</id>
+	<name>Rocker Jetbrains Plugin</name>
 	<version>0.1</version>
-	<vendor email="parrt@antlr.org" url="https://github.com/parrt/sample-jetbrains-plugin">ANTLR Project Sample Jetbrains Plugin</vendor>
+	<vendor email="parrt@antlr.org" url="https://github.com/parrt/Rocker-jetbrains-plugin">ANTLR Project Rocker Jetbrains Plugin</vendor>
 
 	<description><![CDATA[
-  <p>Sample plugin</p>
+  <p>Rocker plugin</p>
 
 <p>
-<a href="https://github.com/parrt/sample-jetbrains-plugin">Github source</a>
+<a href="https://github.com/parrt/Rocker-jetbrains-plugin">Github source</a>
   ]]></description>
 
 	<change-notes><![CDATA[
@@ -28,7 +28,7 @@
 
 	<project-components>
 		<component>
-			<implementation-class>org.antlr.jetbrains.sample.SamplePluginController</implementation-class>
+			<implementation-class>be.bendem.rockerintellij.RockerPluginController</implementation-class>
 		</component>
 	</project-components>
 
@@ -36,21 +36,22 @@
 	</actions>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<fileTypeFactory implementation="org.antlr.jetbrains.sample.SampleFileTypeFactory"/>
-		<lang.syntaxHighlighterFactory key="Sample"
-									   implementationClass="org.antlr.jetbrains.sample.SampleSyntaxHighlighterFactory"/>
+		<fileTypeFactory implementation="be.bendem.rockerintellij.RockerFileTypeFactory"/>
+		<lang.syntaxHighlighterFactory key="Rocker"
+									   implementationClass="be.bendem.rockerintellij.RockerSyntaxHighlighterFactory"/>
 
-		<lang.parserDefinition language="Sample" implementationClass="org.antlr.jetbrains.sample.SampleParserDefinition"/>
-		<lang.ast.factory language="Sample" implementationClass="org.antlr.jetbrains.sample.SampleASTFactory"/>
+		<lang.parserDefinition language="Rocker" implementationClass="be.bendem.rockerintellij.RockerParserDefinition"/>
+		<lang.ast.factory language="Rocker" implementationClass="be.bendem.rockerintellij.RockerASTFactory"/>
 
-		<lang.psiStructureViewFactory language="Sample"
-									  implementationClass="org.antlr.jetbrains.sample.structview.SampleStructureViewFactory"/>
+		<lang.psiStructureViewFactory language="Rocker"
+									  implementationClass="be.bendem.rockerintellij.structview.RockerStructureViewFactory"/>
 
-		<colorSettingsPage implementation="org.antlr.jetbrains.sample.SampleColorSettingsPage"/>
+		<colorSettingsPage implementation="be.bendem.rockerintellij.RockerColorSettingsPage"/>
 
-		<externalAnnotator language="Sample" implementationClass="org.antlr.jetbrains.sample.SampleExternalAnnotator"/>
+		<externalAnnotator language="Rocker" implementationClass="be.bendem.rockerintellij.RockerExternalAnnotator"/>
 
-		<lang.findUsagesProvider language="Sample"
-								 implementationClass="org.antlr.jetbrains.sample.SampleFindUsagesProvider"/>
+		<lang.findUsagesProvider language="Rocker"
+								 implementationClass="be.bendem.rockerintellij.RockerFindUsagesProvider"/>
+		<lang.commenter language="Rocker" implementationClass="be.bendem.rockerintellij.RockerCommenter"/>
 	</extensions>
 </idea-plugin>
